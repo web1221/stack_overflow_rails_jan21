@@ -1,0 +1,9 @@
+<h1>Question: <%= @question.user_question %></h1>
+<h2>Answer: <%= @answer.user_answer %></h2>
+
+<p><%= link_to "Edit answer", edit_question_answer_path(@question, @answer) %></p>
+<p><%= link_to "Delete answer", question_answer_path(@question, @answer),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to question", question_path(@question) %></p>
