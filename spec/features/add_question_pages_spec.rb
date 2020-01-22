@@ -1,6 +1,20 @@
 require 'rails_helper'
 
+
 describe "the add a question process" do
+  before(:each) do
+    visit signup_path
+    fill_in 'Email', :with => 'ela@v.com'
+    fill_in 'Password', :with => 'cats'
+    fill_in 'Password confirmation', :with => 'cats'
+    click_on 'Sign Up'
+    click_on 'Sign out'
+    click_on 'Sign-in'
+    fill_in 'Email', :with => 'ela@v.com'
+    fill_in 'Password', :with => 'cats'
+    click_on 'Sign in'
+  end
+
   it "adds a new question" do
     visit questions_path
     click_link 'Create new question'

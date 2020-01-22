@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  # before_action :authorize, only: [:destroy]
+  before_action :authorize, only: [:index, :create, :edit, :show, :update, :destroy]
   #only: [:destroy] ---> destroy method is only available to users who are signed in
 
   def index
